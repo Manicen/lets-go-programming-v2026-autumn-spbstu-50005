@@ -9,10 +9,11 @@ func main() {
 		pr   string
 		err1 error
 		err2 error
+		err3 error
 	)
 	_, err1 = fmt.Scan(&a)
 	_, err2 = fmt.Scan(&b)
-	fmt.Scan(&pr)
+	_, err3 = fmt.Scan(&pr)
 
 	if err1 != nil {
 		fmt.Println("Invalid first operand")
@@ -21,6 +22,11 @@ func main() {
 
 	if err2 != nil {
 		fmt.Println("Invalid second operand")
+		return
+	}
+
+	if err3 != nil {
+		fmt.Println("Invalid operation")
 		return
 	}
 
