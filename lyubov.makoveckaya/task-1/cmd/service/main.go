@@ -4,33 +4,30 @@ import "fmt"
 
 func main() {
 	var (
-		a    int
-		b    int
-		pr   string
-		err1 error
-		err2 error
-		err3 error
+		a, b int
+		op   string
+		err  error
 	)
-	_, err1 = fmt.Scan(&a)
-	_, err2 = fmt.Scan(&b)
-	_, err3 = fmt.Scan(&pr)
+	_, err = fmt.Scan(&a)
 
-	if err1 != nil {
+	if err != nil {
 		fmt.Println("Invalid first operand")
 		return
 	}
+	_, err = fmt.Scan(&b)
 
-	if err2 != nil {
+	if err != nil {
 		fmt.Println("Invalid second operand")
 		return
 	}
+	_, err = fmt.Scan(&op)
 
-	if err3 != nil {
+	if err != nil {
 		fmt.Println("Invalid operation")
 		return
 	}
 
-	switch pr {
+	switch op {
 	case "+":
 		fmt.Println(a + b)
 	case "-":
